@@ -1,6 +1,5 @@
-const express = require('express');
 const PORT = 3000;
-
+const express = require('express');
 const app = express();
 
-app.listen(PORT, console.log(`Server listen otn port ${PORT}`));
+app.listen(PORT, console.log(`Server is listening on port ${PORT}`));
