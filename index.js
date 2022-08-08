@@ -2,7 +2,7 @@ const PORT = 3000;
 const express = require('express');
 const path = require('path');
 
-const { engine } = require('express-handlebars');
+
 
 const homeController = require('./controllers/homeController.js');
 const aboutController = require('./controllers/aboutController.js');
@@ -10,13 +10,11 @@ const addCubeController = require('./controllers/addCubeController.js');
 const cubeDetailsRender = require('./controllers/detailsController.js');
 
 const app = express();
+require('./config/handlebars.js')(app);
 const router = express.Router();
 
 app.use('/static', express.static(path.join(__dirname, './static')));
 
-app.engine('.hbs', engine({extname: '.hbs'}));
-app.set('views', './views');
-app.set('view engine', '.hbs');
 
 app.use(homeController);
 app.use(aboutController);
