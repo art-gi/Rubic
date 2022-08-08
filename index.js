@@ -6,7 +6,8 @@ const { engine } = require('express-handlebars');
 
 const homeController = require('./controllers/homeController.js');
 const aboutController = require('./controllers/aboutController.js');
-const addCubeController = require('./controllers/addCubeController.js')
+const addCubeController = require('./controllers/addCubeController.js');
+const cubeDetailsRender = require('./controllers/detailsController.js');
 
 const app = express();
 const router = express.Router();
@@ -20,6 +21,7 @@ app.set('view engine', '.hbs');
 app.use(homeController);
 app.use(aboutController);
 app.use(addCubeController);
+app.use(cubeDetailsRender);
 
 
 app.listen(PORT, console.log(`Server is listening on port ${PORT}`));
