@@ -5,6 +5,6 @@ function cubeDetailsRender(req, res) {
     res.render('details')
 }
 
-router.get('/details/:cubeId', cubeDetailsRender);
+router.get('/:cubeId', cubeDetailsRender);
 
 module.exports = router;
