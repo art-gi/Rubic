@@ -1,25 +1,17 @@
 const PORT = 3000;
 const express = require('express');
+const routes = require('./routes.js');
 const path = require('path');
 
-
-
-const homeController = require('./controllers/homeController.js');
-const aboutController = require('./controllers/aboutController.js');
-const addCubeController = require('./controllers/addCubeController.js');
-const cubeDetailsRender = require('./controllers/detailsController.js');
+const detailsController = require('./controllers/detailsController.js')
 
 const app = express();
+require('./config/express.js')(app);
 require('./config/handlebars.js')(app);
-const router = express.Router();
 
 app.use('/static', express.static(path.join(__dirname, './static')));
 
-
-app.use(homeController);
-app.use(aboutController);
-app.use(addCubeController);
-app.use(cubeDetailsRender);
-
+app.use(routes);
+app.use('/details', detailsController)
 
 app.listen(PORT, console.log(`Server is listening on port ${PORT}`));

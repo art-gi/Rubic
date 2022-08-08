@@ -1,10 +1,10 @@
-const router = require('express').Router();
+const router = require('express').Router;
 
-function renderAbout(req, res) {
-
+function aboutRender(req, res) {
+    
     res.render('about');
-}
+};
 
-router.get('/about', renderAbout);
+router.get('/about', aboutRender);
 
 module.exports = router;
