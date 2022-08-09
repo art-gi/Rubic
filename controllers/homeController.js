@@ -1,8 +1,12 @@
+const cubeService = require('../services/cubeService.js');
+
 const router = require('express').Router();
 
 function homeController(req, res) {
-    
-    res.render('index');
+
+    let cubes = cubeService.getAll();
+
+    res.render('index', {cubes});
 };
 
 router.get('/', homeController);

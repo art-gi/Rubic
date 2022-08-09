@@ -8,12 +8,14 @@ function aboutRender(req, res) {
 };
 
 function cubeRender(req, res) {
+    
     res.render('create');
 };
 
 function createCube(req, res) {
-   
+
     let cube = req.body;
+    cubeService.create(cube)
 
     res.redirect('/');
 }

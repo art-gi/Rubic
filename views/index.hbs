@@ -6,9 +6,11 @@
         <input type="number" name="to" class="difficulty" placeholder="Difficulty to...">
         <input type="submit" value="search">
       </form>
+      {{#each cubes}}
       <div class="cube">
-        <img class="cube" src={{imageUrl}}>
-        <p class="name">{{name}}</p>
-        <p><span>Difficulty level:</span>{{level}}</p>
+        <img class="cube" src={{cube.imageUrl}}>
+        <p class="name">{{cube.name}}</p>
+        <p><span>Difficulty level:</span>{{cube.level}}</p>
         <a class="btn" href="/details/5c3a68d9f78d6638ec8fdad7">Details</a>
       </div>
+      {{/each}}
