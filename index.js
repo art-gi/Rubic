@@ -6,7 +6,9 @@ const path = require('path');
 const detailsController = require('./controllers/detailsController.js')
 
 const app = express();
-require('./config/express.js')(app);
+
+app.use(express.urlencoded());
+//require('./config/express.js')(app);
 require('./config/handlebars.js')(app);
 
 app.use('/static', express.static(path.join(__dirname, './static')));
