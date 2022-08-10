@@ -2,7 +2,7 @@ const router = require('express').Router();
 
 function cubeDetailsRender(req, res) {
 
-    res.render('details')
+    res.render('details', {cubes})
 }
 
 router.get('/:cubeId', cubeDetailsRender);
