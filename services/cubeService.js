@@ -1,17 +1,20 @@
 const uniqid = require('uniqid');
-let cube = [];
+let cubes = [];
 
 function create(name, description, imageUrl, level) {
     let id = uniqid();
-    cube.push({name, description, imageUrl, level, id});
-    console.log(cube)
+    cubes.push({name, description, imageUrl, level, id});
 }
 function getAll() {
 
-    return cube.slice();
+    return cubes.slice();
+}
+function getOne(id) {
+    return cubes.find(x => x.id === id);
 }
 const cubeService = {
     create,
-    getAll
+    getAll,
+    getOne
 }
 module.exports = cubeService;
