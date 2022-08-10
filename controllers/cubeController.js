@@ -14,8 +14,8 @@ function cubeRender(req, res) {
 
 function createCube(req, res) {
 
-    let cube = req.body;
-    cubeService.create(cube)
+    let {name, description, imageUrl, level} = req.body;
+    cubeService.create(name, description, imageUrl, level)
 
     res.redirect('/');
 }
